@@ -1,6 +1,8 @@
 BISON_TARGET(HTMLparse htmlparse.y ${CMAKE_CURRENT_BINARY_DIR}/htmlparse.c)
 
-add_definitions(-DGVC_EXPORTS -D_BLD_gvc=1)
+if(BUILD_SHARED_LIBS)
+    add_definitions(-DGVC_EXPORTS -D_BLD_gvc=1)
+endif()    
 
 # Generate colortbl.h from sources
 add_custom_command(

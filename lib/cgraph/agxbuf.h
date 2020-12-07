@@ -24,7 +24,7 @@ extern "C" {
 #   ifdef EXPORT_AGXBUF
 #       define AGXBUF_API __declspec(dllexport)
 #   else
-#       define AGXBUF_API __declspec(dllimport)
+#       define AGXBUF_API extern
 #   endif
 #else
 #   define AGXBUF_API extern

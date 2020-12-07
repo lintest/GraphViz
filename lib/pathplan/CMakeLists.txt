@@ -1,6 +1,8 @@
-add_definitions(-D_BLD_pathplan -DPATHPLAN_EXPORTS)
+if(BUILD_SHARED_LIBS)
+    add_definitions(-D_BLD_pathplan -DPATHPLAN_EXPORTS)
+endif()    
 
-add_library(pathplan SHARED
+add_library(pathplan
     # Header files
     pathgeom.h
     pathplan.h

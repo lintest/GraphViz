@@ -1,6 +1,6 @@
 if (GD_FOUND)
 
-add_library(gvplugin_gd SHARED
+add_library(gvplugin_gd
     # Source files
     gvdevice_gd.c
     gvloadimage_gd.c

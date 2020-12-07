@@ -1,6 +1,8 @@
-add_definitions(-DEXPORT_XDOT)
+if(BUILD_SHARED_LIBS)
+    add_definitions(-DEXPORT_XDOT)
+endif()    
 
-add_library(xdot SHARED
+add_library(xdot
     # Header files
     xdot.h
 

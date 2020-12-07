@@ -10,16 +10,29 @@ include_directories(
     ${GRAPHVIZ_LIB_DIR}/pathplan
 )
 
-add_executable(dot
-    # Source files
-    dot.c
-    no_builtins.c
-)
-
-target_link_libraries(dot
-    cgraph
-    gvc
-)
+if(BUILD_SHARED_LIBS)
+    add_executable(dot
+        # Source files
+        dot.c
+        no_builtins.c
+    )
+    
+    target_link_libraries(dot
+        cgraph
+        gvc
+    )
+else(BUILD_SHARED_LIBS)
+    add_executable(dot
+        # Source files
+        dot.c
+        dot_builtins.c
+    )
+    target_link_libraries(dot
+        gvplugin_core
+        gvplugin_dot_layout
+        gvplugin_neato_layout
+    )
+endif(BUILD_SHARED_LIBS)
 
 # Installation location of executables
 install(

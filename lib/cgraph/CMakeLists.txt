@@ -2,9 +2,13 @@ BISON_TARGET(Grammar grammar.y ${CMAKE_CURRENT_BINARY_DIR}/grammar.c)
 FLEX_TARGET(Scan scan.l  ${CMAKE_CURRENT_BINARY_DIR}/scan.c)
 ADD_FLEX_BISON_DEPENDENCY(Scan Grammar)
 
-add_definitions(-DEXPORT_CGRAPH -DEXPORT_AGXBUF -DEXPORT_CGHDR -DYY_NO_UNISTD_H)
+if(BUILD_SHARED_LIBS)
+    add_definitions(-DEXPORT_CGRAPH -DEXPORT_AGXBUF -DEXPORT_CGHDR)
+endif()
 
-add_library(cgraph SHARED
+add_definitions(-DYY_NO_UNISTD_H)
+
+add_library(cgraph
     # Header files
     agxbuf.h
     cghdr.h

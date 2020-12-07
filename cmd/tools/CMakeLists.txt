@@ -266,34 +266,37 @@ tool_defaults(gvgen)
 
 add_definitions(-DDEMAND_LOADING=0)
 
-add_executable(gvpack
-    # Source files
-    gvpack.c
-)
+if(BUILD_SHARED_LIBS)
+    add_executable(gvpack
+        # Source files
+        gvpack.c
+    )
 
-target_include_directories(gvpack PRIVATE
-    ${GRAPHVIZ_LIB_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${GRAPHVIZ_LIB_DIR}/cdt
-    ${GRAPHVIZ_LIB_DIR}/cgraph
-    ${GRAPHVIZ_LIB_DIR}/common
-    ${GRAPHVIZ_LIB_DIR}/gvc
-    ${GRAPHVIZ_LIB_DIR}/pack
-    ${GRAPHVIZ_LIB_DIR}/pathplan
-    ${EXPAT_INCLUDE_DIRS}
-    ${Getopt_INCLUDE_DIRS}
-)
+    target_include_directories(gvpack PRIVATE
+        ${GRAPHVIZ_LIB_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_BINARY_DIR}
+        ${GRAPHVIZ_LIB_DIR}/cdt
+        ${GRAPHVIZ_LIB_DIR}/cgraph
+        ${GRAPHVIZ_LIB_DIR}/common
+        ${GRAPHVIZ_LIB_DIR}/gvc
+        ${GRAPHVIZ_LIB_DIR}/pack
+        ${GRAPHVIZ_LIB_DIR}/pathplan
+        ${EXPAT_INCLUDE_DIRS}
+        ${Getopt_INCLUDE_DIRS}
+    )
 
-target_link_libraries(gvpack
-    cdt
-    cgraph
-    gvc
-    gvplugin_neato_layout
-    ingraphs
-)
+    target_link_libraries(gvpack
+        cdt
+        cgraph
+        gvc
+        gvplugin_neato_layout
+        ingraphs
+    )
 
 tool_defaults(gvpack)
+
+endif(BUILD_SHARED_LIBS)
 
 # =================================== gxl2gv ===================================
 if(EXPAT_FOUND)

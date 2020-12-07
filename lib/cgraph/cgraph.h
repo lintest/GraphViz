@@ -25,7 +25,7 @@ extern "C" {
 #   ifdef EXPORT_CGRAPH
 #       define CGRAPH_API __declspec(dllexport)
 #   else
-#       define CGRAPH_API __declspec(dllimport)
+#       define CGRAPH_API extern
 #   endif
 #else
 #   define CGRAPH_API extern

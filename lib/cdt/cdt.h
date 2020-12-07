@@ -19,7 +19,7 @@ extern "C" {
 #   ifdef EXPORT_CDT
 #       define CDT_API __declspec(dllexport)
 #   else
-#       define CDT_API __declspec(dllimport)
+#       define CDT_API extern
 #   endif
 #else
 #   define CDT_API extern

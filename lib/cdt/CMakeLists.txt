@@ -1,6 +1,8 @@
-add_definitions(-DEXPORT_CDT)
+if(BUILD_SHARED_LIBS)
+    add_definitions(-DEXPORT_CDT)
+endif()    
 
-add_library(cdt SHARED
+add_library(cdt
     # Header files
     cdt.h
     dthdr.h

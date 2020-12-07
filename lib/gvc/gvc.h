@@ -29,13 +29,12 @@ extern "C" {
 
 /*visual studio*/
 #ifdef _WIN32
-#ifndef GVC_EXPORTS
-#undef extern
-#define extern __declspec(dllimport)
-#endif
+#   ifdef GVC_EXPORTS
+#       define extern __declspec(dllimport)
+#   endif
 #endif
 /*end visual studio*/
-	
+
 #define LAYOUT_DONE(g) (agbindrec(g, "Agraphinfo_t", 0, TRUE) && GD_drawing(g))
 
 /* misc */

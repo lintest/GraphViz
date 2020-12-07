@@ -25,7 +25,7 @@ extern "C" {
 #   ifdef EXPORT_XDOT
 #       define XDOT_API __declspec(dllexport)
 #   else
-#       define XDOT_API __declspec(dllimport)
+#       define XDOT_API
 #   endif
 #else
 #   define XDOT_API extern

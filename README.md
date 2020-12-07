@@ -1,6 +1,6 @@
 # Graphviz - Graph Visualization Tools
 
-[![build status](https://gitlab.com/graphviz/graphviz/badges/master/pipeline.svg)](https://gitlab.com/graphviz/graphviz/-/pipelines/)
+[![Build status](https://ci.appveyor.com/api/projects/status/mhvp7wjogtovajyj?svg=true)](https://ci.appveyor.com/project/lintest/graphviz)
 
 from AT&T Research and Lucent Bell Labs
 

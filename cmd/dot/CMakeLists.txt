@@ -34,7 +34,7 @@ else(BUILD_SHARED_LIBS)
     )
 endif(BUILD_SHARED_LIBS)
 
-add_dependencies(dot common)
+add_dependencies(dot common pack_obj)
 
 # Installation location of executables
 install(

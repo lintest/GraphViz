@@ -34,6 +34,8 @@ else(BUILD_SHARED_LIBS)
     )
 endif(BUILD_SHARED_LIBS)
 
+add_dependencies(dot, common)
+
 # Installation location of executables
 install(
     TARGETS dot

@@ -32,6 +32,11 @@ else(BUILD_SHARED_LIBS)
         gvplugin_dot_layout
         gvplugin_neato_layout
     )
+    if (EXPAT_FOUND)
+        target_link_libraries(dot
+            expat
+        )
+    endif(EXPAT_FOUND)
 endif(BUILD_SHARED_LIBS)
 
 add_dependencies(dot common pack_obj)
